@@ -1,4 +1,4 @@
-from tower_logic import Stack
+from tower_logic import Stack 
 
 disk1 = Stack()
 disk2 = Stack()
@@ -32,54 +32,85 @@ def main():
         splittedmove = move.split()
         if len(splittedmove) != 2:
             print("Please enter only two letters.")
+            continue
         if splittedmove[0] not in "ABC" or splittedmove[1] not in "ABC":
             print("Please enter from ABC only ganire format A C not AC")
+            continue
+        movediskAgain(splittedmove[0], splittedmove[1], disknum)
             
 
 def display():
     current = disk1.top
-    currentt = disk2.top
-    currenttt = disk3.top
+    currentt = disk2.top 
+    currenttt = disk3.top 
     while current and currentt and currenttt:
         print(current.value,currentt.value,currenttt.value)
         current = current.next
-        currentt  = currentt.next
+        currentt  = currentt.next 
         currenttt = currenttt.next
-    
+        
 def initializeStacks(num:int):
-    space = ((num*2+1)-1)//2
-    disk1.push(f"{space*' '}{" A"}{space*' '}")
-    disk2.push(f"{space*' '}{" B"}{space*' '}")
-    disk3.push(f"{space*' '}{"C"}{space*' '}")
-
-    #need to solvbe
+    maxwidth = num * 2 + 1
+    disk1.push(f"{'A'.center(maxwidth)}")
+    disk2.push(f"{'B'.center(maxwidth)}")
+    disk3.push(f"{'C'.center(maxwidth)}")
     for i in range(num ,0, -1):
-        chuchu = 2 * i + 1 
-        space = (num - i + 1)
-        stringg = f"{space*' '}{chuchu*'*'}{space*' '}"
+        disk_width = 2 * i - 1 
+        stringg = ("*" * disk_width).center(maxwidth)
         disk1.push(stringg)
 
+
     for i in range(num ,0, -1):
-        space = ((num*2+1)-1)//2
-        stringg = f"{space*' '}{'|'}{space*' '}"
-        disk2.push(stringg)
-        disk3.push(stringg)
+        spacer = "|".center(maxwidth)
+        disk2.push(spacer)
+        disk3.push(spacer)
 
-       
+              
+        
+def movediskAgain(source, destination, maxDisk):
+    s = {
+        "A": disk1,
+        "B": disk2,
+        "C": disk3
+    }
 
+    src_ = s[source]
+    dst_ = s[destination]
+    
+    if len(str((src_.peek())).strip()) > len(str((dst_.peek())).strip()):
+        
+        disk = src_.pop().strip()
+        lines = -1
+        while not dst_.is_empty():
+            current = dst_.peek()
+            if "A" in str(current).strip() or "B" in str(current).strip() or "C" in str(current).strip() or "*" in str(current).strip():
+                break
+            if str(current).strip() == "|":
+                lines += 1
+                dst_.pop()
 
+        #for disk and spacers nya
+        maxwidth = maxDisk * 2 + 1
+        dst_.push(disk.center(maxwidth))   
+
+        #for spacers
+        for i in range(lines):
+            spacer = "|".center(maxwidth)
+            dst_.push(spacer) 
+        
+
+        
+        display()
+
+    else:
+        print("INVALID MOVE!")
+    
+    
 
 
 if __name__ == "__main__": 
     main()
     
-
-def moveDiskAgain():
-    pass
-
-
-
-
 
 '''
 def printTower():
