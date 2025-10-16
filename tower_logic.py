@@ -23,7 +23,7 @@ class Stack:
         self.top = None
     
     def peek(self):
-        return self.top.value
+        return self.top.value 
     
     def display(self):
         result = []
