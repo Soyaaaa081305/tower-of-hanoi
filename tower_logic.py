@@ -19,18 +19,5 @@ class Stack:
     def is_empty(self):
         return self.top is None
     
-    def create_new_stack(self):
-        self.top = None
-    
     def peek(self):
         return self.top.value 
-    
-    def display(self):
-        result = []
-        current = self.top
-        while current:
-            result.append(current.value)
-            current = current.next
-        return result
-            
-        
