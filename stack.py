@@ -21,7 +21,3 @@ class Stack:
     
     def peek(self):
         return self.top.value 
-<<<<<<< HEAD:stack.py
-        
-=======
->>>>>>> 296c79e11a73a73cc466f5698c91e1ac3921ea35:tower_logic.py
