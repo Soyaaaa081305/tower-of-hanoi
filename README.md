@@ -14,7 +14,8 @@ The project shows the use of **STACK and LINKED LIST data structures** in Python
 ## Project Report
 
 You can view the full project documentation and code explanation here:  
-📄 [Download Tower_of_Hanoi_Project_Report.docx](./Tower_of_Hanoi_Project_Report.docx)
+📄 [Download Tower_of_Hanoi_Official Documentation.pdf](./Machine%20Problem%20Documentation.pdf)
+📄 [Download Tower_of_Hanoi_Development Progress Repoirt.pdf](./PROGRESSREPORT-towerofhanoi.pdf)
 
 
 ## Features
