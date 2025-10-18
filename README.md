@@ -76,6 +76,6 @@ Invalid move: You cannot place a larger disk on smaller one!
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License - see the [LICENSE](https://badges.mit-license.org/) file for details.
 
 
