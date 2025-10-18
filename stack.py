@@ -24,13 +24,4 @@ class Stack:
     
     def peek(self):
         return self.top.value 
-    
-    def display(self):
-        result = []
-        current = self.top
-        while current:
-            result.append(current.value)
-            current = current.next
-        return result
-            
         

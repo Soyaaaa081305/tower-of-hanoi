@@ -1,4 +1,4 @@
-from tower_logic import Stack 
+from stack import Stack 
 
 disk1 = Stack()
 disk2 = Stack()
